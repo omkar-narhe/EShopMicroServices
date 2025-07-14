@@ -67,7 +67,7 @@ public class CustomExceptionHandler(ILogger<CustomExceptionHandler> logger)
         await context.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
         // Uncomment below if not working
         // await context.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken);
-        return await ValueTask.FromResult(false);
+        return true;
 
     }
 }
