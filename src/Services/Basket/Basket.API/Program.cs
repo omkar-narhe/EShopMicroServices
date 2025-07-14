@@ -13,7 +13,7 @@ builder.Services.AddMediatR(config =>
 
 builder.Services.AddMarten(options =>
 {
-    options.Connection(builder.Configuration.GetConnectionString("DefaultConnection")!);
+    options.Connection(builder.Configuration.GetConnectionString("Database")!);
     // Schema Identity marking for shopping cart
     options.Schema.For<ShoppingCart>().Identity(x => x.Username);
 }).UseLightweightSessions();
