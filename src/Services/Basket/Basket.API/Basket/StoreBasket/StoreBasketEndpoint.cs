@@ -10,7 +10,7 @@ public class StoreBasketEndpoint
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/basket/{userName}", async (string UserName, StoreBasketRequest request, ISender sender) =>
+        app.MapPost("/basket", async (StoreBasketRequest request, ISender sender) =>
         {
             var command = new StoreBasketCommand(request.Cart);
 
