@@ -8,6 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 
+
+// -----------------------------------------
+
+// Infrastructure - EF Core
+// Application - MediatR
+// API - Carter, HealtChecks, ...
+// -----------------------------------------
+
+
 builder.Services
     .AddApplicationServices()
     .AddInfrastructureServices(builder.Configuration)
