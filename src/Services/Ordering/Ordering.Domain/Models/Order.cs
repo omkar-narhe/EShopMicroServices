@@ -45,8 +45,7 @@ public class Order : Aggregate<OrderId>
         return order;
     }
 
-    public void Update(OrderId id,
-        CustomerId customerId,
+    public void Update(
         OrderName orderName,
         Address shippingAddress,
         Address billingAddress,
