@@ -6,11 +6,11 @@ public record Payment
     public string CardNumber { get;  } = default!;
     public string ExpirationDate { get;  } = default!;
     public string CVV { get;  } = default!;
-    public decimal PaymentMethod { get;  } = default!;
+    public int PaymentMethod { get;  } = default!;
 
     protected Payment() { }
 
-    private Payment(string cardName, string cardNumber, string expirationDate, string cvv, decimal paymentMethod)
+    private Payment(string cardName, string cardNumber, string expirationDate, string cvv, int paymentMethod)
     {
         CardName = cardName;
         CardNumber = cardNumber;
@@ -19,7 +19,7 @@ public record Payment
         PaymentMethod = paymentMethod;
     }
 
-    public static Payment Of(string cardName, string cardNumber, string expirationDate, string cvv, decimal paymentMethod)
+    public static Payment Of(string cardName, string cardNumber, string expirationDate, string cvv, int paymentMethod)
     {
         ArgumentNullException.ThrowIfNullOrWhiteSpace(cardName);
         ArgumentNullException.ThrowIfNullOrWhiteSpace(cardNumber);
