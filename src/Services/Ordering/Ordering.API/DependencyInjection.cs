@@ -1,4 +1,6 @@
-﻿namespace Ordering.API;
+﻿using Carter;
+
+namespace Ordering.API;
 
 public static class DependencyInjection
 {
@@ -7,15 +9,15 @@ public static class DependencyInjection
         // Register API services here
         // services.AddControllers();
         // services.AddSwaggerGen();
-        // services.AddCarter();
+        services.AddCarter();
 
         return services;
     }
 
-    public static WebApplication UseApiServices(this WebApplication webApplication)
+    public static WebApplication UseApiServices(this WebApplication app)
     {
-        // app.MapCarter();
+        app.MapCarter();
 
-        return webApplication;
+        return app;
     }
 } 
