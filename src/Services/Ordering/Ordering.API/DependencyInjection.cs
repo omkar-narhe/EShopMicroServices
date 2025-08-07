@@ -1,4 +1,4 @@
-﻿using Carter;
+﻿using BuildingBlocks.Exceptions.Handler;
 
 namespace Ordering.API;
 
@@ -11,6 +11,8 @@ public static class DependencyInjection
         // services.AddSwaggerGen();
         services.AddCarter();
 
+        services.AddExceptionHandler<CustomExceptionHandler>();
+
         return services;
     }
 
@@ -18,6 +20,7 @@ public static class DependencyInjection
     {
         app.MapCarter();
 
+        app.UseExceptionHandler(options => { });
         return app;
     }
 } 
