@@ -38,7 +38,7 @@ public class StoreBasketCommandHandler
         foreach (var item in cart.Items)
         {
             var coupon = await discountProto.GetDiscountAsync(new GetDiscountRequest() { ProductName = item.ProductName });
-            item.Price -= coupon.Amount;
+            item.Price -= Convert.ToDecimal(coupon.Amount);
         }
     }
 }
