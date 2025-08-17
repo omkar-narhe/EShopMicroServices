@@ -13,7 +13,7 @@ public record OrderName
     public static OrderName Of(string value)
     {
         ArgumentNullException.ThrowIfNullOrWhiteSpace(value);
-        ArgumentOutOfRangeException.ThrowIfNotEqual(value.Length, DefaultLength);
+        //ArgumentOutOfRangeException.ThrowIfNotEqual(value.Length, DefaultLength);
         if (string.IsNullOrWhiteSpace(value))
         {
             throw new DomainException("Order name cannot be empty.");
